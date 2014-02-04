@@ -14,7 +14,7 @@ class Persistable
   def reload!
     json_string = @redis.get(@id)
     unless json_string.nil?
-      self.instance_variable_set :@data, JSON.parse(json_string)
+      @data = JSON.parse(json_string)
     end
   end
 
