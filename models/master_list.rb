@@ -1,3 +1,7 @@
+#
+# A master list of mail aliases, for uniqueness validation. 
+#
+
 class MasterList < Persistable
   def initialize(redis)
     @redis = redis
@@ -7,6 +11,9 @@ class MasterList < Persistable
   end
 
   def new_alias(id)
+    if @data.include? id
+      raise ArgumentError.new "existing maillist"
+    end
     @data << id
     persist!
   end
@@ -14,5 +21,9 @@ class MasterList < Persistable
   def remove_alias(id)
     raise ArgumentError.new "Nonexisting maillist" unless @data.delete(id)
     persist!
+  end
+
+  def alias_exists?(id)
+    @data.include? id
   end
 end
