@@ -1,5 +1,11 @@
 class Server < MiniSmtpServer
-  def initialize(list_storage = ListStorage.new)
+  
+  def initialize(*args)
+    @lists = ListStorage.new
+    super
+  end
+
+  def set_storage(list_storage)
     @lists = list_storage
   end
 
