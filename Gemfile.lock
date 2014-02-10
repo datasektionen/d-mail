@@ -1,12 +1,26 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    coderay (1.1.0)
+    dotenv (0.9.0)
+    foreman (0.63.0)
+      dotenv (>= 0.7)
+      thor (>= 0.13.6)
+    method_source (0.8.2)
     mini-smtp-server (0.0.2)
+    pry (0.9.12.6)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     redis (3.0.7)
+    slop (3.4.7)
+    thor (0.18.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  foreman
   mini-smtp-server
+  pry
   redis
