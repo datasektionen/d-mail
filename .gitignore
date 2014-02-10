@@ -12,7 +12,8 @@ test/tmp
 test/version_tmp
 tmp
 .log
-
+dump.rdb
+:
 # YARD artifacts
 .yardoc
 _yardoc
