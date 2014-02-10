@@ -2,6 +2,7 @@ class Server < MiniSmtpServer
   
   def initialize(*args)
     @lists = ListStorage.new
+    @logger = Logger.new("./logs/received_mail.log")
     super
   end
 
@@ -10,7 +11,9 @@ class Server < MiniSmtpServer
   end
 
   def new_message_event(message_hash)
-    puts "# New Email recieved"
+    @logger.info "Message to:#{message_hash[:to]} received"
+    @logger.info "sent to: #{@lists.get(message_hash[:to]).join(' ')}"
+    puts "# New Email received"
     puts "-- to: #{message_hash[:to]}"
     puts "-- recipients:"
     if recipients = @lists.get(message_hash[:to])
