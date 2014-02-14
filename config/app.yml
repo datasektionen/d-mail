@@ -1,0 +1,6 @@
+redis:
+  path: /tmp/redis.sock
+server:
+  port: 25
+  ip: 127.0.0.1
+  count: 4
