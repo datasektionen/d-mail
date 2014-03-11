@@ -1,6 +1,8 @@
 redis:
   path: /tmp/redis.sock
+  list_index: 0
+  queue_index: 1
 server:
-  port: 25
+  port: 2525
   ip: 127.0.0.1
   count: 4
