@@ -11,6 +11,7 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
+logs
 .log
 dump.rdb
 :
@@ -18,3 +19,5 @@ dump.rdb
 .yardoc
 _yardoc
 doc/
+Procfile
+
